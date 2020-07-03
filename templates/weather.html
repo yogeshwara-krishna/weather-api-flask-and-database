@@ -1,0 +1,24 @@
+<html>
+    <title>Weather</title>
+    <link href="{{ url_for('static',filename='style.css')}}" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</html>
+<body>
+    <div id ="title">WEATHER APP</div>
+    <br/>
+    <form action="http://127.0.0.1:5000/in" id="form" method="post" class="col-md-6 col-md-offset-3 " onsubmit="return validateForm()" required> 
+        <label for="city">Enter City</label>
+        <input type="text" id="city" name="city">
+        <input type="submit" value="Submit"><br>
+      </form>
+
+    <div id="location">{{location|title}}</div>
+    <div id="temp">{{details['temp']}}°C</div>
+    <div id="desc">{{details['description']}}</div>
+    <div id="mode">{{mode}}</div>
+    
+    
+
+    
+</body>
